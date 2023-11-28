@@ -763,20 +763,21 @@ ul {
   }
 
   .main {
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
   }
 
   .plan .plan__box {
     width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.6rem;
-    height: 10.4rem;
+    gap: 0.5rem;
     border-radius: 0;
   }
 
   .plan__select {
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
+  }
+
+  .plan__select a {
+    /* displa */
   }
 
   /* Card */
@@ -799,6 +800,20 @@ ul {
 @media (max-width: 500px) {
   .main {
     padding: 0 0;
+  }
+
+  .plan .plan__box {
+    height: 10.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plan .btn-plan--close {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    bottom: 4rem;
+    left: 27rem;
   }
 }
 
