@@ -560,7 +560,6 @@ ul {
   align-items: center;
   gap: 9.6rem;
   margin-top: 1.2rem;
-  /* background-color: #f3f3f3; */
   padding: 0.8rem 0.8rem 1.2rem 0.8rem;
   border-radius: 1rem;
 }
@@ -609,13 +608,6 @@ ul {
 .check-btn.active .circle-solid {
   display: none;
 }
-/* .check-btn:hover .circle-dashed {
-  display: none;
-}
-
-.check-btn:hover .circle-solid {
-  display: inline-block;
-} */
 
 .step-textbox {
   display: flex;
@@ -778,8 +770,9 @@ ul {
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 1.6rem;
     height: 10.4rem;
+    border-radius: 0;
   }
 
   .plan__select {
@@ -790,6 +783,7 @@ ul {
 
   .guide .card {
     width: 100%;
+    border-radius: 0;
   }
 
   .onboarding__step .onboarding__img-container {
