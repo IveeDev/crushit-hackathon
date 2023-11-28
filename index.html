@@ -1,0 +1,824 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./app.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav" aria-label="Shopify Admin Navigation Menu">
+        <div class="nav_logo">
+          <a href="http://shopify.com" aria-label="Link to shopify website">
+            <img
+              src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
+              alt="shopify logo"
+              loading="lazy"
+              class="logo"
+            />
+          </a>
+        </div>
+
+        <form class="form" aria-label="Search Shopify Admin">
+          <div class="form__group">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="form__icon"
+            >
+              <g id="SearchMinor">
+                <path
+                  id="Icon"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.3226 13.3833C11.3996 14.0841 10.2484 14.5 9 14.5C5.96243 14.5 3.5 12.0376 3.5 9C3.5 5.96243 5.96243 3.5 9 3.5C12.0376 3.5 14.5 5.96243 14.5 9C14.5 10.2484 14.0841 11.3996 13.3833 12.3226L16.2803 15.2197C16.5732 15.5126 16.5732 15.9874 16.2803 16.2803C15.9874 16.5732 15.5126 16.5732 15.2197 16.2803L12.3226 13.3833ZM13 9C13 11.2091 11.2091 13 9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9Z"
+                  fill="#B5B5B5"
+                />
+              </g>
+            </svg>
+            <input
+              type="search"
+              placeholder="search"
+              class="form__input"
+              id="search-input"
+              aria-placeholder="search"
+            />
+          </div>
+        </form>
+
+        <div class="nav__icons">
+          <button
+            class="btn-bell"
+            id="notificationBell"
+            aria-label="Notifications"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="notification-menu"
+          >
+            <img
+              src="https://crushingit.tech/hackathon-assets/icon-bell.svg"
+              alt="notification bell"
+              loading="lazy"
+            />
+          </button>
+          <div
+            class="notification-menu"
+            aria-label="Notification Menu"
+            role="notification-menu"
+          >
+            <div class="notification-menu__content">
+              <div class="alerts">
+                <p>Alerts</p>
+                <div class="alerts__icons">
+                  <button class="btn btn--filter" aria-label="Filter">
+                    <img
+                      src="https://crushingit.tech/hackathon-assets/icon-filter.svg"
+                      alt="filter"
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button class="btn btn--circle" aria-label="Circle">
+                    <img
+                      src="https://crushingit.tech/hackathon-assets/icon-check-empty-circle.svg"
+                      alt="circle"
+                      loading="lazy"
+                      class="icon-circle"
+                    />
+                  </button>
+                </div>
+              </div>
+              <p class="notification-menu__message">
+                Alerts about your store and account will be shown here
+              </p>
+            </div>
+          </div>
+
+          <button
+            class="btn-profile"
+            id="dropdownBtn"
+            aria-haspopup="true"
+            aria-controls="dropdownMenu"
+            aria-expanded="false"
+          >
+            <span class="btn-profile__names">Davii Collections</span>
+            <span class="btn-profile__user">DC</span>
+          </button>
+
+          <div
+            class="dropdown__menu"
+            id="profile-menu"
+            aria-label="Profile menu"
+            role="profile-menu"
+          >
+            <!-- <div class="dropdown__title"></div> -->
+            <ul class="dropdown__content">
+              <li class="dropdown__list">
+                <div class="store">
+                  <span class="user store__user" aria-controls="dropdownMenu"
+                    >DC</span
+                  >
+                  <span class="store__name">Davii Collections</span>
+                </div>
+                <svg
+                  viewBox="0 0 20 20"
+                  class="Polaris-Icon__Svg_375hu"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.78 5.97a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06 0l-3.25-3.25a.75.75 0 1 1 1.06-1.06l2.72 2.72 5.97-5.97a.75.75 0 0 1 1.06 0Z"
+                  ></path>
+                </svg>
+              </li>
+              <li class="dropdown__list dropdown__list--all-stores">
+                <a
+                  href="http://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  class="all-stores"
+                >
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/icon-store.svg"
+                    alt="allstore icon"
+                  />
+                  <span>All stores</span>
+                </a>
+              </li>
+              <hr class="divider" />
+              <li class="dropdown__list">
+                <a
+                  href="https://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  >Help Center</a
+                >
+              </li>
+              <li class="dropdown__list">
+                <a
+                  href="https://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  >Changelog</a
+                >
+              </li>
+              <li class="dropdown__list">
+                <a
+                  href="https://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  >Community forum</a
+                >
+              </li>
+              <li class="dropdown__list">
+                <a
+                  href="https://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  >Hire a Shopify Partner</a
+                >
+              </li>
+              <li class="dropdown__list dropdown__list--border-b">
+                <a
+                  href="https://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  >Keyboard Shortcuts</a
+                >
+              </li>
+              <hr class="divider" />
+              <li class="dropdown__list dropdown__list--account">
+                <div class="email">
+                  <p>David Michael</p>
+                  <span>davidmicheal@gmail.com</span>
+                </div>
+              </li>
+
+              <li class="dropdown__list">
+                <a
+                  href="https://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  >Manage account</a
+                >
+              </li>
+
+              <li class="dropdown__list">
+                <a
+                  href="https://admin.shopify.com"
+                  aria-label="Link to spotify admin dashboard"
+                  role="menuitem"
+                  >Log out</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <section class="plan">
+        <div class="plan__box">
+          <p>Extend your trial for $1/month for 3 months on select plans.</p>
+          <div class="plan__select">
+            <a
+              href="http://shopify.com/pricing"
+              class="btn-plan btn-plan--select"
+              >Select a plan</a
+            >
+            <!-- </button> -->
+            <button
+              class="btn-plan btn-plan--close"
+              id="close-btn"
+              aria-label="Close callout bar"
+            >
+              <img
+                src="https://crushingit.tech/hackathon-assets/icon-cross.svg"
+                alt="plan-close"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide">
+        <div class="card">
+          <div class="card__title">
+            <div class="card__text">
+              <h3>Setup guide</h3>
+              <p>
+                Use this personalized guide to get your store up and running.
+              </p>
+            </div>
+            <button id="accordion-btn">
+              <img
+              src="https://crushingit.tech/hackathon-assets/icon-arrow-down.svg"
+              alt="arrow down" loading="lazy" class="accordion-icon"
+            </button>
+          </div>
+          <div class="progress-container">
+            <span class="label">1 / 5 completed</span>
+
+            <div class="progress-bar">
+              <span class="progress-meter"></span>
+            </div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="card__content">
+            <div class="onboarding">
+              <!-- Step-1 -->
+              <div class="onboarding__step">
+                <div class="onboarding__text-box">
+                  <button class="check-btn" id="checkbox-btn">
+                    <!-- unchecked svg circle broken -->
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="circle-dashed"
+                      id="svg-dashed"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+
+                    <!--unchecked svg circle solid  -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      class="circle-solid"
+                      id="svg-solid"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <!-- Checked svg -->
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checked"
+                      id="svg-checked"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <!-- svg spinner -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="icon-spinner"
+                      id="svg-spiiner"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="step-textbox">
+                    <span>Customize your online store</span>
+                    <div class="step-text">
+                      <p>
+                        Choose a theme and add your logo, colors, and images to
+                        reflect your brand.
+                        <a href="#" class="learn-more" role="link"
+                          >Learn more</a
+                        >
+                      </p>
+                      <a href="#" class="step-cta" role="link"
+                        >Customize theme</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="onboarding__img-container">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/customise-store.png"
+                    alt="customize image"
+                  />
+                </div>
+              </div>
+
+              <!-- Step-2 -->
+              <div class="onboarding__step">
+                <div class="onboarding__text-box">
+                  <button class="check-btn" id="checkbox-btn">
+                    <!-- unchecked svg cirle-broken -->
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="circle-dashed"
+                      id="svg-dashed"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+
+                    <!-- Unchecked svg circle-solid -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      class="circle-solid"
+                      id="svg-solid"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <!-- Checked svg -->
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checked"
+                      id="svg-checked"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <!-- svg spinner -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="icon-spinner"
+                      id="svg-spiiner"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="step-textbox">
+                    <span>Add your first product</span>
+                    <div class="step-text">
+                      <p>
+                        Write a description, add photos, and set pricing for the
+                        products you plan to sell.
+                        <a href="#" class="learn-more" role="link"
+                          >Learn more</a
+                        >
+                      </p>
+                      <div class="add-product">
+                        <a href="#" class="step-cta" role="link">Add product</a>
+                        <button>Imports products</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="onboarding__img-container">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/product.png"
+                    alt="customize image"
+                  />
+                </div>
+              </div>
+
+              <!-- Step-3 -->
+              <div class="onboarding__step">
+                <div class="onboarding__text-box">
+                  <button class="check-btn" id="checkbox-btn">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="circle-dashed"
+                      id="svg-dashed"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      class="circle-solid"
+                      id="svg-solid"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <!-- Checked svg -->
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checked"
+                      id="svg-checked"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <!-- svg spinner -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="icon-spinner"
+                      id="svg-spiiner"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="step-textbox">
+                    <span>Add a custom domain</span>
+                    <div class="step-text">
+                      <p>
+                        Your current domain is 222219.myshopify.com but you can
+                        add a custom domain to help customers find your online
+                        store.
+                        <a href="#" class="learn-more" role="link"
+                          >Learn more</a
+                        >
+                      </p>
+                      <a href="#" class="step-cta" role="link">Add domain</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="onboarding__img-container">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/website.png"
+                    alt="domain image"
+                  />
+                </div>
+              </div>
+
+              <!-- Step-4 -->
+              <div class="onboarding__step">
+                <div class="onboarding__text-box">
+                  <button class="check-btn" id="checkbox-btn">
+                    <!-- Unchecked svg circle-broken -->
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="circle-dashed"
+                      id="svg-dashed"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+
+                    <!-- unchecked svg circle-solid -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      class="circle-solid"
+                      id="svg-solid"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <!-- Checked svg -->
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checked"
+                      id="svg-checked"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <!-- svg spinner -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="icon-spinner"
+                      id="svg-spiiner"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="step-textbox">
+                    <span>Name your store</span>
+                    <div class="step-text">
+                      <p>
+                        Your temporary store name is currently Davii
+                        collections. The store name appears in your admin and
+                        your online store.
+                        <a href="#" class="learn-more" role="link"
+                          >Learn more</a
+                        >
+                      </p>
+                      <a href="#" class="step-cta" role="link">Name store</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="onboarding__img-container">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/name-store.png"
+                    alt="store image"
+                  />
+                </div>
+              </div>
+
+              <!-- Step-5 -->
+              <div class="onboarding__step">
+                <div class="onboarding__text-box">
+                  <button class="check-btn" id="checkbox-btn">
+                    <!-- unchecked svg circle broken-->
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="circle-dashed"
+                      id="svg-dashed"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <!-- unchecked svg circle solid -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      class="circle-solid"
+                      id="svg-solid"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <!-- Checked svg -->
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checked"
+                      id="svg-checked"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <!-- svg spinner -->
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="icon-spinner"
+                      id="svg-spiiner"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="step-textbox">
+                    <span>Setup a payment provider</span>
+                    <div class="step-text">
+                      <p>
+                        Choose a payment provider to start accepting payments.
+                        You’ll need to create an account with the payment
+                        provider and set it up with your Shopify store.
+                        <a href="" class="learn-more" role="link">Learn more</a>
+                      </p>
+                      <a href="#" class="step-cta" role="link"
+                        >Set up payment</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="onboarding__img-container">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/payment.png"
+                    alt="payment image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
