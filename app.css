@@ -772,14 +772,6 @@ ul {
     border-radius: 0;
   }
 
-  .plan__select {
-    /* margin-top: 1.5rem; */
-  }
-
-  .plan__select a {
-    /* displa */
-  }
-
   /* Card */
 
   .guide .card {
@@ -808,12 +800,16 @@ ul {
     align-items: flex-start;
   }
 
+  .plan p {
+    max-width: 35rem;
+  }
+
   .plan .btn-plan--close {
     position: relative;
     display: flex;
     justify-content: flex-end;
     bottom: 4rem;
-    left: 27rem;
+    left: 24rem;
   }
 }
 
